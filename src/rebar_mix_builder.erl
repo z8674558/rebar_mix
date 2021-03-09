@@ -6,7 +6,7 @@
 
 build(AppInfo) ->
     AppDir = rebar_app_info:dir(AppInfo),
-    case sh("elixir -pa \"../*/ebin\" -S mix compile --no-load-deps "
+    case sh("elixir -pa \"../*/ebin\"  -pa \"../../../../include\" -S mix compile --no-load-deps "
                         "--no-deps-check --no-protocol-consolidation",
                         [{cd, AppDir},
                          {return_on_error, true},
